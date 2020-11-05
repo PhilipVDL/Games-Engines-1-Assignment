@@ -1,5 +1,7 @@
 # Games-Engines-1-Assignment
 Procedural generation assignment for Games Engines 1
+Gerhardus van der Linde, c18357866, DT508
+
 
 ## What it does
 This project aims to procedurally react to the player's location and movements in order to generate a seemingly infinite cityscape of buildings with a non-euclidean interior layout.  
