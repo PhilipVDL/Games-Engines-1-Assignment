@@ -5,6 +5,9 @@ TagManager:
   serializedVersion: 2
   tags:
   - Street
+  - gFloor
+  - uFloor
+  - fFloor
   layers:
   - Default
   - TransparentFX

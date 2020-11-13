@@ -19,15 +19,16 @@ public class CityscapeSpawn : MonoBehaviour
     {
         spawned = false;
         floors = new GameObject[falseFloors];
+        street = GameObject.Find("Reference Street");
     }
 
     private void OnCollisionEnter(Collision collision)
     {
         if (collision.gameObject.CompareTag("Player") && !spawned)
         {
+            spawned = true;
             CleanSlate();
             SpawnCityscape();
-            spawned = true;
         }
     }
 
@@ -37,7 +38,14 @@ public class CityscapeSpawn : MonoBehaviour
         GameObject[] streets = GameObject.FindGameObjectsWithTag("Street");
         foreach(GameObject go in streets)
         {
-            Destroy(go);
+            if (go.name == "Reference Street")
+            {
+                //do nothing
+            }
+            else
+            {
+                Destroy(go); //destroys all streets except this and the reference
+            }
         }
         gameObject.tag = "Street";
     }
@@ -54,7 +62,8 @@ public class CityscapeSpawn : MonoBehaviour
                 }
                 else
                 {
-                    SpawnStreet(xPos, zPos);
+                    SpawnStreet(xPos, zPos); //spawns surrounding streets
+                    //StartCoroutine(SpawnStreetCoroutine(xPos, zPos));
                 }
             }
         }
@@ -63,14 +72,14 @@ public class CityscapeSpawn : MonoBehaviour
     void SpawnStreet(int x, int z)
     {
         //street
-        Vector3 pos = new Vector3(transform.position.x + (x * gridDistance), transform.position.y, transform.position.z + (z * gridDistance));
-        GameObject newStreet = Instantiate(street, pos, transform.rotation);
-        newStreet.name = "street";
+        Vector3 pos = new Vector3(transform.position.x + (x * gridDistance), transform.position.y, transform.position.z + (z * gridDistance)); //pos of new prefab
+        GameObject newStreet = Instantiate(street, pos, transform.rotation); //spawns and tracks
+        newStreet.name = "street"; //keeps names clean
         //ground floor
         Vector3 streetPos = new Vector3(newStreet.transform.position.x, newStreet.transform.position.y + 0.01f, newStreet.transform.position.z);
         GameObject groundFloor = Instantiate(gFloor, streetPos, newStreet.transform.rotation);
         groundFloor.name = "ground floor";
-        groundFloor.transform.SetParent(newStreet.transform);
+        groundFloor.transform.SetParent(newStreet.transform); //childs for easy cleaning
         //false floors
         for (int i = 0; i < falseFloors - 1; i++)
         {
@@ -84,7 +93,7 @@ public class CityscapeSpawn : MonoBehaviour
             }
             else
             {
-                nextFloor.transform.SetParent(floors[i - 1].transform);
+                nextFloor.transform.SetParent(floors[i - 1].transform); //stacks self as child chain
             }
         }
     }
