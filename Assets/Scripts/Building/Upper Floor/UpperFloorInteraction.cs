@@ -106,34 +106,13 @@ public class UpperFloorInteraction : MonoBehaviour
         GameObject belowRoom = Instantiate(gFloor, belowPos, belowQuat);
         belowRoom.name = "Ground Floor";
         transform.SetParent(belowRoom.transform);
+        belowRoom.GetComponent<GroundFloorInteraction>().upperSpawned = true;
 
         //street
         Vector3 streetPos = new Vector3(transform.position.x, transform.position.y - floorHeight - 0.01f, transform.position.z);
         GameObject newStreet = Instantiate(street, streetPos, Quaternion.identity);
         newStreet.name = "street";
         belowRoom.transform.SetParent(newStreet.transform);
-
-        /*
-        //false for below
-        for (int j = 0; j < falseFloors - 1; j++)
-        {
-            Vector3 nextLevel = new Vector3(streetPos.x, streetPos.y + (falseFloorHeight * (j + 1)) + (falseFloorHeight / 2), streetPos.z);
-            GameObject nextFloor = Instantiate(fFloor, nextLevel, newStreet.transform.rotation);
-            nextFloor.name = "false floor";
-            floors[j] = nextFloor;
-            if (j == 0)
-            {
-                nextFloor.transform.SetParent(newStreet.transform);
-                firstFloor = nextFloor;
-            }
-            else
-            {
-                nextFloor.transform.SetParent(floors[j - 1].transform); //stacks self as child chain
-            }
-        }
-        firstFloor.SetActive(false);
-        */
-        
 
         //north/south
         for (int i = 0; i < 2; i++)
