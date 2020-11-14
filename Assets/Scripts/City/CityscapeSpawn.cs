@@ -28,6 +28,11 @@ public class CityscapeSpawn : MonoBehaviour
             spawned = true;
             CleanSlate();
             SpawnCityscape();
+
+            if(transform.childCount < 2)
+            {
+                FixFalseFloors();
+            }
         }
     }
 
@@ -102,6 +107,27 @@ public class CityscapeSpawn : MonoBehaviour
             if (i == 0)
             {
                 nextFloor.transform.SetParent(newStreet.transform);
+            }
+            else
+            {
+                nextFloor.transform.SetParent(floors[i - 1].transform); //stacks self as child chain
+            }
+        }
+    }
+
+    void FixFalseFloors()
+    {
+        Vector3 streetPos = new Vector3(transform.position.x, transform.position.y + 0.01f, transform.position.z);
+
+        for (int i = 0; i < falseFloors - 1; i++)
+        {
+            Vector3 nextLevel = new Vector3(streetPos.x, streetPos.y + (falseFloorHeight * (i + 1)) + (falseFloorHeight / 2), streetPos.z);
+            GameObject nextFloor = Instantiate(fFloor, nextLevel, transform.rotation);
+            nextFloor.name = "false floor";
+            floors[i] = nextFloor;
+            if (i == 0)
+            {
+                nextFloor.transform.SetParent(transform);
             }
             else
             {

@@ -54,7 +54,14 @@ public class GroundFloorInteraction : MonoBehaviour
         }
         else if(transform.parent.transform.childCount > 1)
         {
-            falseFloorStack.SetActive(true);
+            if(falseFloorStack == null)
+            {
+                falseFloorStack = transform.parent.transform.GetChild(1).gameObject;
+            }
+            if(falseFloorStack != null)
+            {
+                falseFloorStack.SetActive(true);
+            }
             upperSpawned = false;
         }
     }
