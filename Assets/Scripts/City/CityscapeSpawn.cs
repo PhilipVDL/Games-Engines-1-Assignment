@@ -1,6 +1,5 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
-using System.Xml.XPath;
 using UnityEngine;
 
 public class CityscapeSpawn : MonoBehaviour
@@ -47,6 +46,20 @@ public class CityscapeSpawn : MonoBehaviour
                 Destroy(go); //destroys all streets except this and the reference
             }
         }
+
+        GameObject[] uppers = GameObject.FindGameObjectsWithTag("uFloor");
+        foreach (GameObject go in uppers)
+        {
+            if (go.name == "Reference Upper Floor")
+            {
+                //do nothing
+            }
+            else
+            {
+                Destroy(go); //destroys all uppers except the reference
+            }
+        }
+
         gameObject.tag = "Street";
     }
 
@@ -63,7 +76,6 @@ public class CityscapeSpawn : MonoBehaviour
                 else
                 {
                     SpawnStreet(xPos, zPos); //spawns surrounding streets
-                    //StartCoroutine(SpawnStreetCoroutine(xPos, zPos));
                 }
             }
         }

@@ -2563,6 +2563,8 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1724273166417282163}
+  - component: {fileID: 3734482440470841699}
+  - component: {fileID: 1378498887141062523}
   m_Layer: 0
   m_Name: Upper Floor
   m_TagString: uFloor
@@ -2577,7 +2579,7 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1724273166417282162}
-  m_LocalRotation: {x: -0, y: 1, z: -0, w: 0}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 6.51, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
@@ -2588,7 +2590,39 @@ Transform:
   - {fileID: 1724273166221605167}
   m_Father: {fileID: 0}
   m_RootOrder: 0
-  m_LocalEulerAnglesHint: {x: 0, y: 180, z: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &3734482440470841699
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1724273166417282162}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5a1701172b7db6b4c8ac9dfe964c385c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  street: {fileID: 0}
+  gFloor: {fileID: 1610576878033685097, guid: 8baaa04f328079b4d8b5471dba11218c, type: 3}
+  uFloor: {fileID: 0}
+  fFloor: {fileID: 611260917114372113, guid: ba4d013e128257a41942eedfb8d5374c, type: 3}
+  spawned: 0
+  reverse: 0
+  falseFloors: 5
+--- !u!65 &1378498887141062523
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1724273166417282162}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 20, y: 6.5, z: 20}
+  m_Center: {x: 0, y: 3.25, z: 0}
 --- !u!1 &1724273166454322345
 GameObject:
   m_ObjectHideFlags: 0

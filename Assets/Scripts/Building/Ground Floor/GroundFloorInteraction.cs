@@ -5,7 +5,6 @@ using UnityEngine;
 public class GroundFloorInteraction : MonoBehaviour
 {
     public GameObject uFloor;
-    public bool inside;
     public bool upperSpawned;
     public GameObject falseFloorStack;
     private float floorHeight = 6.5f;
@@ -14,10 +13,6 @@ public class GroundFloorInteraction : MonoBehaviour
     {
         falseFloorStack = transform.parent.transform.GetChild(1).gameObject;
     }
-
-    //when not inside, but not in upper
-    //destroy upper floor
-    //enable false floors
 
     private void OnTriggerEnter(Collider other)
     {
@@ -51,6 +46,11 @@ public class GroundFloorInteraction : MonoBehaviour
         if(transform.parent.transform.childCount > 2)
         {
             Destroy(transform.parent.transform.GetChild(2).gameObject);
+            falseFloorStack.SetActive(true);
+            upperSpawned = false;
+        }
+        else if(transform.parent.transform.childCount > 1)
+        {
             falseFloorStack.SetActive(true);
             upperSpawned = false;
         }
