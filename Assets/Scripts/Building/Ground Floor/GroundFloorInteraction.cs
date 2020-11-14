@@ -11,7 +11,10 @@ public class GroundFloorInteraction : MonoBehaviour
 
     private void Start()
     {
-        falseFloorStack = transform.parent.transform.GetChild(1).gameObject;
+        if(transform.parent.transform.childCount > 1)
+        {
+            falseFloorStack = transform.parent.transform.GetChild(1).gameObject;
+        }
     }
 
     private void OnTriggerEnter(Collider other)
