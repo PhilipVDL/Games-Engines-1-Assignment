@@ -9,6 +9,8 @@ public class CityscapeSpawn : MonoBehaviour
     public int falseFloors;
     public bool spawned;
 
+    GroundFloorInteraction gfi;
+
     //variables
     float gridDistance = 50;
     float falseFloorHeight = 6.5f;
@@ -118,6 +120,7 @@ public class CityscapeSpawn : MonoBehaviour
     void FixFalseFloors()
     {
         Vector3 streetPos = new Vector3(transform.position.x, transform.position.y + 0.01f, transform.position.z);
+        GameObject firstFloor = null;
 
         for (int i = 0; i < falseFloors - 1; i++)
         {
@@ -128,11 +131,22 @@ public class CityscapeSpawn : MonoBehaviour
             if (i == 0)
             {
                 nextFloor.transform.SetParent(transform);
+                firstFloor = nextFloor;
             }
             else
             {
                 nextFloor.transform.SetParent(floors[i - 1].transform); //stacks self as child chain
             }
         }
+        //get gFloor
+        gfi = transform.GetChild(0).GetComponent<GroundFloorInteraction>();
+        //assign false floors
+        if(firstFloor != null)
+        {
+            gfi.falseFloorStack = firstFloor;
+        }
+        //spawn upper
+        gfi.SpawnUpper();
+        gfi.ColorChangeGround();
     }
 }

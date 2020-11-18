@@ -8,6 +8,7 @@ public class GroundFloorInteraction : MonoBehaviour
     public bool upperSpawned;
     public GameObject falseFloorStack;
     private float floorHeight = 6.5f;
+    ColorChangeScript colorChange;
 
     private void Start()
     {
@@ -15,6 +16,7 @@ public class GroundFloorInteraction : MonoBehaviour
         {
             falseFloorStack = transform.parent.transform.GetChild(1).gameObject;
         }
+        colorChange = GameObject.FindGameObjectWithTag("Player").GetComponent<ColorChangeScript>();
     }
 
     private void OnTriggerEnter(Collider other)
@@ -22,17 +24,20 @@ public class GroundFloorInteraction : MonoBehaviour
         if (!upperSpawned)
         {
             SpawnUpper();
+            ColorChangeGround();
         }
     }
 
-    void SpawnUpper()
+    public void SpawnUpper()
     {
         //upper floor
         falseFloorStack.SetActive(false); //disable false floors
         Vector3 upperPos = new Vector3(transform.position.x, transform.position.y + floorHeight, transform.position.z); //pos for upper
-        Vector3 upperRot = new Vector3(transform.rotation.x, transform.rotation.y + 180, transform.rotation.z); //rot for upper
-        Quaternion upperQuat = Quaternion.Euler(upperRot); //convert to Quaternion
-        GameObject newUpper = Instantiate(uFloor, upperPos, upperQuat);
+
+        Vector3 baseRot = transform.rotation.eulerAngles;
+        Vector3 halfRot = new Vector3(baseRot.x, baseRot.y + 180, baseRot.z);
+        Quaternion halfQuat = Quaternion.Euler(halfRot);
+        GameObject newUpper = Instantiate(uFloor, upperPos, halfQuat);
         newUpper.transform.SetParent(transform.parent);
 
         //upper's roof
@@ -64,5 +69,10 @@ public class GroundFloorInteraction : MonoBehaviour
             }
             upperSpawned = false;
         }
+    }
+
+    public void ColorChangeGround()
+    {
+        colorChange.GroundColor();
     }
 }
