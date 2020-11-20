@@ -1085,7 +1085,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   uFloor: {fileID: 1724273166417282162, guid: 39d7c89ebd6102840b05513764221f61, type: 3}
-  inside: 0
   upperSpawned: 0
   falseFloorStack: {fileID: 0}
 --- !u!65 &1951280832464540905
@@ -6228,7 +6227,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: f9e2338b931b5f347a85a63ca71091f8, type: 2}
+  - {fileID: 2100000, guid: 6355bfcfbb1696b4b919c266001ee79a, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
