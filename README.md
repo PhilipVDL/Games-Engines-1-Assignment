@@ -13,6 +13,7 @@ In simpler terms:
 ## What I did VS what I borrowed
 ### Borrowed:
 First person controller from "Standard Assets" on the Unity asset store.  
+Various free 3D textures from [https://3dtextures.me/](https://3dtextures.me/)  
 
 ## What I'm most proud of
 
