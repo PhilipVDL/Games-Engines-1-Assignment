@@ -12,8 +12,14 @@ In simpler terms:
 
 ## What I did VS what I borrowed
 ### Borrowed:
-First person controller from "Standard Assets" on the Unity asset store.  
-Various free 3D textures from [https://3dtextures.me/](https://3dtextures.me/)  
+-First person controller from "Standard Assets" on the Unity asset store.  
+-Various free 3D textures from [https://3dtextures.me/](https://3dtextures.me/)  
+
+### DIY:
+-All buildings and building segments  
+-Code for spawning/despawning building segements  
+-Code for color changing based on direction of rooms  
+
 
 ## What I'm most proud of
 
