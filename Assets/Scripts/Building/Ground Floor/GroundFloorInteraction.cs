@@ -16,7 +16,12 @@ public class GroundFloorInteraction : MonoBehaviour
         {
             falseFloorStack = transform.parent.transform.GetChild(1).gameObject;
         }
-        colorChange = GameObject.FindGameObjectWithTag("Player").GetComponent<ColorChangeScript>();
+        colorChange = GetComponentInChildren<ColorChangeScript>();
+    }
+
+    private void Update()
+    {
+        ColorChangeGround();
     }
 
     private void OnTriggerEnter(Collider other)
@@ -24,7 +29,6 @@ public class GroundFloorInteraction : MonoBehaviour
         if (!upperSpawned)
         {
             SpawnUpper();
-            ColorChangeGround();
         }
     }
 
