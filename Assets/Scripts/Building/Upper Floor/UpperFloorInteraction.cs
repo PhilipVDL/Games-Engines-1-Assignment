@@ -28,7 +28,12 @@ public class UpperFloorInteraction : MonoBehaviour
     {
         street = GameObject.Find("Reference Street");
         uFloor = GameObject.Find("Reference Upper Floor");
-        colorChange = GameObject.FindGameObjectWithTag("Player").GetComponent<ColorChangeScript>();
+        colorChange = GetComponentInChildren<ColorChangeScript>();
+    }
+
+    private void Update()
+    {
+        ColorChangeUpper();
     }
 
     private void OnTriggerEnter(Collider other)
@@ -38,7 +43,6 @@ public class UpperFloorInteraction : MonoBehaviour
             spawned = true;
             WipeWorld();
             SpawnRooms();
-            ColorChangeUpper();
         }
     }
 
