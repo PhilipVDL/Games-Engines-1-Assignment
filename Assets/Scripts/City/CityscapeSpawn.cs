@@ -14,7 +14,7 @@ public class CityscapeSpawn : MonoBehaviour
     //variables
     float gridDistance = 50;
     float falseFloorHeight = 6.5f;
-    int gridRange = 1;
+    int gridRange = 2;
 
     private void Awake()
     {
