@@ -11098,6 +11098,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 73c0ee23b5dee6c469238c2c504cc40f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  lamp: {fileID: 4220793705687377770, guid: 0e0877901bae4504fb66c0682bdc5c65, type: 3}
+  chair: {fileID: 7889335396011672172, guid: 16349902fbfaa074f8e11ae687167f9c, type: 3}
+  table: {fileID: 5064273689929046096, guid: e5809c34998f85b4690280c05f11f8fd, type: 3}
+  maxLamp: 2
+  maxChair: 3
+  maxTable: 1
 --- !u!1 &4702082616853828033
 GameObject:
   m_ObjectHideFlags: 0
