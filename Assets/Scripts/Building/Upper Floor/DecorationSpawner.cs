@@ -22,7 +22,10 @@ public class DecorationSpawner : MonoBehaviour
         }
 
         DecorationCounts();
-        SpawnDecorations();
+        if(transform.parent.gameObject.name != "Reference Upper Floor")
+        {
+            SpawnDecorations();
+        }
     }
 
     void DecorationCounts()
