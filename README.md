@@ -19,7 +19,7 @@ In simpler terms:
 -All buildings and building segments  
 -Code for spawning/despawning building segements  
 -Code for color changing based on direction of rooms  
-
+-Code for randomising furniture in each room  
 
 ## What I'm most proud of
 
