@@ -26,8 +26,9 @@ In simpler terms:
 -I'm also proud of the fact that they can keep the hierarchy tidy, and avoid missing anything that needs to be deleted, by reassigning the parents and children of objects to keep organised.  
 
 ## Instructions for running
--
--
--
+-Download the compressed build from the Downloadable-build branch  
+-Unzip the file  
+-Run the executable file in the folder  
+-Pressing Esc will quit the application
 
 ## Video
