@@ -31,10 +31,6 @@ public class DecorationSpawner : MonoBehaviour
         chairCount = Random.Range(minChair, maxChair + 1);
         tableCount = Random.Range(minTable, maxTable + 1);
         totalCount = lampCount + chairCount + tableCount;
-
-        Debug.Log(lampCount);
-        Debug.Log(chairCount);
-        Debug.Log(tableCount);
     }
 
     void SpawnDecorations()
@@ -56,7 +52,6 @@ public class DecorationSpawner : MonoBehaviour
                         lampSpawns++;
                         spawnCount++;
                         spawnSlots[i] = true;
-                        Debug.Log("first lamp");
                     }
                     else if (chairSpawns < chairCount)
                     {
@@ -64,7 +59,6 @@ public class DecorationSpawner : MonoBehaviour
                         chairSpawns++;
                         spawnCount++;
                         spawnSlots[i] = true;
-                        Debug.Log("first chair");
                     }
                     else if (tableSpawns < tableCount)
                     {
@@ -72,7 +66,6 @@ public class DecorationSpawner : MonoBehaviour
                         tableSpawns++;
                         spawnCount++;
                         spawnSlots[i] = true;
-                        Debug.Log("first table");
                     }
                 }
             }
@@ -90,7 +83,6 @@ public class DecorationSpawner : MonoBehaviour
                         lampSpawns++;
                         spawnCount++;
                         spawnSlots[j] = true;
-                        Debug.Log("second lamp");
                     }
                     else if (chairSpawns < chairCount)
                     {
@@ -98,7 +90,6 @@ public class DecorationSpawner : MonoBehaviour
                         chairSpawns++;
                         spawnCount++;
                         spawnSlots[j] = true;
-                        Debug.Log("second chair");
                     }
                     else if (tableSpawns < tableCount)
                     {
@@ -106,7 +97,6 @@ public class DecorationSpawner : MonoBehaviour
                         tableSpawns++;
                         spawnCount++;
                         spawnSlots[j] = true;
-                        Debug.Log("second table");
                     }
                 }
             }
