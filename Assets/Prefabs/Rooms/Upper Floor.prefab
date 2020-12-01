@@ -11101,6 +11101,9 @@ MonoBehaviour:
   lamp: {fileID: 4220793705687377770, guid: 0e0877901bae4504fb66c0682bdc5c65, type: 3}
   chair: {fileID: 7889335396011672172, guid: 16349902fbfaa074f8e11ae687167f9c, type: 3}
   table: {fileID: 5064273689929046096, guid: e5809c34998f85b4690280c05f11f8fd, type: 3}
+  minLamp: 1
+  minChair: 1
+  minTable: 0
   maxLamp: 2
   maxChair: 3
   maxTable: 1

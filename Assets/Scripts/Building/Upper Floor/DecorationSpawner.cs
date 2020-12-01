@@ -8,6 +8,7 @@ public class DecorationSpawner : MonoBehaviour
     private bool[] spawnSlots;
     public GameObject lamp, chair, table;
 
+    public int minLamp, minChair, minTable;
     public int maxLamp, maxChair, maxTable;
     private int lampCount, chairCount, tableCount, totalCount;
 
@@ -26,9 +27,9 @@ public class DecorationSpawner : MonoBehaviour
 
     void DecorationCounts()
     {
-        lampCount = Random.Range(0, maxLamp + 1);
-        chairCount = Random.Range(0, chairCount + 1);
-        tableCount = Random.Range(0, tableCount + 1);
+        lampCount = Random.Range(minLamp, maxLamp + 1);
+        chairCount = Random.Range(minChair, chairCount + 1);
+        tableCount = Random.Range(minTable, tableCount + 1);
         totalCount = lampCount + chairCount + tableCount;
     }
 
@@ -72,30 +73,30 @@ public class DecorationSpawner : MonoBehaviour
 
         if(spawnCount < totalCount)
         {
-            for (int i = 0; i < decoSpawns.Length; i++)
+            for (int j = 0; j < decoSpawns.Length; j++)
             {
-                if (!spawnSlots[i])
+                if (!spawnSlots[j])
                 {
                     if (lampSpawns < lampCount)
                     {
-                        Instantiate(lamp, decoSpawns[i].position, decoSpawns[i].rotation);
+                        Instantiate(lamp, decoSpawns[j].position, decoSpawns[j].rotation);
                         lampSpawns++;
                         spawnCount++;
-                        spawnSlots[i] = true;
+                        spawnSlots[j] = true;
                     }
                     else if (chairSpawns < chairCount)
                     {
-                        Instantiate(chair, decoSpawns[i].position, decoSpawns[i].rotation);
+                        Instantiate(chair, decoSpawns[j].position, decoSpawns[j].rotation);
                         chairSpawns++;
                         spawnCount++;
-                        spawnSlots[i] = true;
+                        spawnSlots[j] = true;
                     }
                     else if (tableSpawns < tableCount)
                     {
-                        Instantiate(table, decoSpawns[i].position, decoSpawns[i].rotation);
+                        Instantiate(table, decoSpawns[j].position, decoSpawns[j].rotation);
                         tableSpawns++;
                         spawnCount++;
-                        spawnSlots[i] = true;
+                        spawnSlots[j] = true;
                     }
                 }
             }
