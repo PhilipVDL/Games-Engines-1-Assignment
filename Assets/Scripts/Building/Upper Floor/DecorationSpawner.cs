@@ -48,21 +48,24 @@ public class DecorationSpawner : MonoBehaviour
                 {
                     if (lampSpawns < lampCount)
                     {
-                        Instantiate(lamp, decoSpawns[i].position, decoSpawns[i].rotation);
+                        GameObject spawn = Instantiate(lamp, decoSpawns[i].position, decoSpawns[i].rotation);
+                        spawn.transform.SetParent(transform);
                         lampSpawns++;
                         spawnCount++;
                         spawnSlots[i] = true;
                     }
                     else if (chairSpawns < chairCount)
                     {
-                        Instantiate(chair, decoSpawns[i].position, decoSpawns[i].rotation);
+                        GameObject spawn = Instantiate(chair, decoSpawns[i].position, decoSpawns[i].rotation);
+                        spawn.transform.SetParent(transform);
                         chairSpawns++;
                         spawnCount++;
                         spawnSlots[i] = true;
                     }
                     else if (tableSpawns < tableCount)
                     {
-                        Instantiate(table, decoSpawns[i].position, decoSpawns[i].rotation);
+                        GameObject spawn = Instantiate(table, decoSpawns[i].position, decoSpawns[i].rotation);
+                        spawn.transform.SetParent(transform);
                         tableSpawns++;
                         spawnCount++;
                         spawnSlots[i] = true;
@@ -79,21 +82,24 @@ public class DecorationSpawner : MonoBehaviour
                 {
                     if (lampSpawns < lampCount)
                     {
-                        Instantiate(lamp, decoSpawns[j].position, decoSpawns[j].rotation);
+                        GameObject spawn = Instantiate(lamp, decoSpawns[j].position, decoSpawns[j].rotation);
+                        spawn.transform.SetParent(transform);
                         lampSpawns++;
                         spawnCount++;
                         spawnSlots[j] = true;
                     }
                     else if (chairSpawns < chairCount)
                     {
-                        Instantiate(chair, decoSpawns[j].position, decoSpawns[j].rotation);
+                        GameObject spawn = Instantiate(chair, decoSpawns[j].position, decoSpawns[j].rotation);
+                        spawn.transform.SetParent(transform);
                         chairSpawns++;
                         spawnCount++;
                         spawnSlots[j] = true;
                     }
                     else if (tableSpawns < tableCount)
                     {
-                        Instantiate(table, decoSpawns[j].position, decoSpawns[j].rotation);
+                        GameObject spawn = Instantiate(table, decoSpawns[j].position, decoSpawns[j].rotation);
+                        spawn.transform.SetParent(transform);
                         tableSpawns++;
                         spawnCount++;
                         spawnSlots[j] = true;
