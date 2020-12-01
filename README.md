@@ -22,6 +22,8 @@ In simpler terms:
 -Code for randomising furniture in each room  
 
 ## What I'm most proud of
+-I'm proud of the fact that the scripts can instantiate so many things so quickly without causing a drop in framerate, or creating overlapping buildings.  
+-I'm also proud of the fact that they can keep the hierarchy tidy, and avoid missing anything that needs to be deleted, by reassigning the parents and children of objects to keep organised.  
 
 ## Instructions for running
 -
