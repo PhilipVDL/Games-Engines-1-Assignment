@@ -37,4 +37,4 @@ In simpler terms:
 -Mouse to look around
 
 ## Video
-[![YouTube](https://img.youtube.com/0xyRtCJrhMY/0.jpg)](https://youtu.be/0xyRtCJrhMY)
+[![YouTube](https://img.youtube.com/vi/0xyRtCJrhMY/0.jpg)](https://youtu.be/0xyRtCJrhMY)
