@@ -8,7 +8,8 @@ This project aims to procedurally react to the player's location and movements i
 In simpler terms:  
 -No matter how far you walk, there will be more cityscape  
 -No matter how many times you go up a flight of stairs, or walk to the next room over, there will be more rooms  
--The color and rotation of rooms will be based on what direction you traveled to reach them, even if you go back to the room you just came from.
+-The color and rotation of rooms will be based on what direction you traveled to reach them, even if you go back to the room you just came from  
+-The furniture in each room is randomly selected and placed
 
 ## What I did VS what I borrowed
 ### Borrowed:
@@ -29,6 +30,11 @@ In simpler terms:
 -Download the compressed build from the Downloadable-build branch  
 -Unzip the file  
 -Run the executable file in the folder  
--Pressing Esc will quit the application
+  
+-Pressing Esc will quit the application  
+-W,A,S,D for movement  
+-Space to jump  
+-Mouse to look around
 
 ## Video
+[![YouTube](https://img.youtube.com/0xyRtCJrhMY/0.jpg)](https://youtu.be/0xyRtCJrhMY)
