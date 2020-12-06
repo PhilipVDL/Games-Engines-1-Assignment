@@ -17,7 +17,7 @@ In simpler terms:
 -Various free 3D textures from [https://3dtextures.me/](https://3dtextures.me/)  
 
 ### DIY:
--All buildings and building segments  
+-All buildings, building segments, and furniture  
 -Code for spawning/despawning building segements  
 -Code for color changing based on direction of rooms  
 -Code for randomising furniture in each room  
@@ -27,10 +27,16 @@ In simpler terms:
 -I'm also proud of the fact that they can keep the hierarchy tidy, and avoid missing anything that needs to be deleted, by reassigning the parents and children of objects to keep organised.  
 
 ## Instructions for running
+To run in Unity editor:  
+-Simply download the project from the Final-submission branch and open in Unity  
+-Press the play button in the editor  
+
+To run as a standalone executable (.exe):  
 -Download the compressed build from the Downloadable-build branch  
 -Unzip the file  
 -Run the executable file in the folder  
-  
+
+## Controls
 -Pressing Esc will quit the application  
 -W,A,S,D for movement  
 -Space to jump  
